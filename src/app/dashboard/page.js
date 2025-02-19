@@ -1,6 +1,8 @@
+
 "use client";
-import { VStack } from "@chakra-ui/react";
-import SearchFor from "./search-for/searchFor"; 
+
+import { Flex, Box } from "@chakra-ui/react";
+import SearchFor from "./search-for/searchFor";
 import SearchParams from "./search-params/searchParams";
 import UploadFiles from "./upload-files/UploadFiles";
 import ImageEditor from "./tools/ImageEditor"; // ✅ Correct
