@@ -1,14 +1,13 @@
 
 "use client";
-
 import { Flex, Box } from "@chakra-ui/react";
 import SearchFor from "./search-for/searchFor";
 import SearchParams from "./search-params/searchParams";
 import UploadFiles from "./upload-files/UploadFiles";
 import { ImageProvider } from "@/contexts/ImageContext";
+import ImageEditor from "./tools/ImageEditor";
 import "./dashboard.css";
 import "../globals.css";
-
 export default function Dashboard() {
   return (
     <ImageProvider>
@@ -21,7 +20,7 @@ export default function Dashboard() {
         gap={4}
       >
         {/* Left Section (Upload Files) */}
-        <Box 
+        <Box
           flex="1"
           bg="white"
           p={4}
@@ -31,7 +30,6 @@ export default function Dashboard() {
         >
           <UploadFiles />
         </Box>
-
         {/* Right Section (Search & Parameters) */}
         <Flex
           direction="column"
@@ -43,7 +41,7 @@ export default function Dashboard() {
           <Box bg="white" p={4} borderRadius="lg" shadow="md">
             <SearchFor />
           </Box>
-
+          {/* <ImageEditor/> */}
           {/* Bottom Right (Search Parameters) */}
           <Box bg="white" p={4} borderRadius="lg" shadow="md">
             <SearchParams />
