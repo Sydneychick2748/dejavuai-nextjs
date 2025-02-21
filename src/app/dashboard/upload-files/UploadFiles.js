@@ -120,15 +120,7 @@ export default function UploadFiles() {
     multiple: true,
   });
 
-  // Navigate to searchFor.js with the selected image
-
-
-  // const handleSelectSingleImage = (file) => {
-  //   console.log("Navigating to SearchFor with file:", file);
-  //   const fileUrl = URL.createObjectURL(file);
-  //   router.push(`/search-for?image=${encodeURIComponent(fileUrl)}`);
-  // };
-
+  
 
   // Handle selecting an image
   const handleSelectSingleImage = (file) => {
