@@ -122,10 +122,17 @@ export default function UploadFiles() {
 
   // ✅ Keep everything in UploadFiles.js the same and only update this function
 
+// const handleSelectSingleImage = (file) => {
+//   console.log("Selecting image for SearchFor:", file);
+//   const fileUrl = URL.createObjectURL(file);
+//   setSelectedImage(fileUrl); // ✅ Updates `SearchFor.js` display
+
+//   console.log("✅ Image successfully selected for SearchFor.js!");
+// };
 const handleSelectSingleImage = (file) => {
   console.log("Selecting image for SearchFor:", file);
   const fileUrl = URL.createObjectURL(file);
-  setSelectedImage(fileUrl); // ✅ Updates `SearchFor.js` display
+  setSelectedImage(fileUrl); // Updates `SearchFor.js` display
 
   console.log("✅ Image successfully selected for SearchFor.js!");
 };
