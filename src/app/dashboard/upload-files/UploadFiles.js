@@ -29,8 +29,8 @@ export default function UploadFiles() {
   const [errorMessage, setErrorMessage] = useState("");
   const [databaseSelected, setDatabaseSelected] = useState(false); // Track if database is selected
 
-// Bar turns blue if the user starts typing OR uploads files
-const isActive = databaseName.trim() !== "" || files.length > 0;
+  // Bar turns blue if the user starts typing OR uploads files
+  const isActive = databaseName.trim() !== "" || files.length > 0;
   // const router = useRouter();
   const { setSelectedImage } = useContext(ImageContext); // ✅ Get function from context
 
@@ -175,34 +175,36 @@ const isActive = databaseName.trim() !== "" || files.length > 0;
             variant="ghost"
             border="none"
             mt={4}
+            mb={4}
             fontSize={["2xl", "3xl", "4xl"]} // Scales size for different screens
             color="#3083F9"
             ml={["0", "-20px", "-100px"]} // Adjusts left margin responsively
+            _hover={{ bg: "transparent" }} // Removes hover effect
           >
             +
           </Button>
         </HStack>
 
-        {errorMessage && (
-          <Text color="red.500" fontSize="sm" mt={2}>
-            {errorMessage}
-          </Text>
-        )}
+        <Box w="75%" ml={3} position="relative">
+          <Input
+            color="black"
+            w="full"
+            placeholder="Enter Database Name"
+            value={databaseName}
+            onChange={handleDatabaseNameChange}
+            borderRadius="2xl"
+            border="1px solid"
+            borderColor="gray.300"
+            bg="gray.100"
+            _placeholder={{ color: "gray.500" }}
+          />
+          {errorMessage && (
+            <Text color="red.500" fontSize="sm" mt={1} zIndex={2} position="absolute">
+              {errorMessage}
+            </Text>
+          )}
+        </Box>
 
-        <Input
-          color="black" // Make text readable on a gray background
-          w="75%"
-          placeholder="Enter Database Name"
-          value={databaseName}
-          onChange={handleDatabaseNameChange}
-          ml={"3"}
-          borderRadius="2xl"
-          border="1px solid"
-          borderColor="gray.300"
-          alignSelf="flex-start"
-          bg="gray.100" // <-- Change background to match "Select Databases"
-          _placeholder={{ color: "gray.500" }} // Match placeholder color
-        />
       </form>
       <Box
         {...getRootProps()}
