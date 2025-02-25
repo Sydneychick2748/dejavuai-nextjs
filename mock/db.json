@@ -134,6 +134,15 @@
       "phone": "(111)222-3333",
       "password": "$2b$10$q7f.F8tmnKno9Ig/qLWQN.qOngTS6YIlpPaAjjqsOjkaLgK.uCF56",
       "files": []
+    },
+    {
+      "id": "1740163690307",
+      "firstName": "chris",
+      "lastName": "laura",
+      "email": "chris@laura.com",
+      "phone": "(123)456-7899",
+      "password": "$2b$10$3gfaIr2zFY0VbNh6EOrE2ui3QdtdHZ2qw05eYr/yE7sXiT5vF0TaW",
+      "files": []
     }
   ],
   "databases": [

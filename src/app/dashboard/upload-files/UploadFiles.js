@@ -27,7 +27,10 @@ export default function UploadFiles() {
   const [showMonaLisa, setShowMonaLisa] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [databaseSelected, setDatabaseSelected] = useState(false); // Track if database is selected
 
+// Bar turns blue if the user starts typing OR uploads files
+const isActive = databaseName.trim() !== "" || files.length > 0;
   // const router = useRouter();
   const { setSelectedImage } = useContext(ImageContext); // ✅ Get function from context
 
@@ -120,14 +123,6 @@ export default function UploadFiles() {
     multiple: true,
   });
 
-  // Navigate to searchFor.js with the selected image
-
-  // const handleSelectSingleImage = (file) => {
-  //   console.log("Navigating to SearchFor with file:", file);
-  //   const fileUrl = URL.createObjectURL(file);
-  //   router.push(`/search-for?image=${encodeURIComponent(fileUrl)}`);
-  // };
-
   // Handle selecting an image
   const handleSelectSingleImage = (file) => {
     console.log("Selecting image for SearchFor:", file);
@@ -145,57 +140,21 @@ export default function UploadFiles() {
       bg="blue.100"
       h="85vh"
     >
+      <Box
+        w="full"
+        h="40px"
+        borderRadius="2xl"
+        bg={isActive ? "#3083F9" : "gray.100"} // Turns blue when active
+        color={isActive ? "white" : "black"}
+        display="flex"
+        alignItems="center"
+        pl={4}
+        fontWeight="400"
+      >
+        Search Within
+      </Box>
+
       <form style={{ width: "100%" }}>
-        {/* <Text fontSize="lg" fontWeight="bold" color="black">
-          Database Name
-        </Text> */}
-        {/* <Input
-          color="black"
-          placeholder="Enter a name for your database"
-          value={databaseName}
-          onChange={handleDatabaseNameChange}
-        /> */}
-        <Input
-          color="white.600"
-          placeholder="Search Within"
-          value={databaseName}
-          onChange={handleDatabaseNameChange}
-          borderRadius="2xl"
-          border="none"
-          bg="#3083F9"
-          boxShadow="sm"
-          // w="full"
-          _placeholder={{ color: "white" }} // Sets placeholder text color
-        />
-
-        {/* Placeholder Buttons */}
-        {/* <HStack w="full" spacing={4}>
-          <Button
-            w="40%"
-            colorScheme="gray"
-            variant="outline"
-            bg={"white"}
-            mt={8}
-            borderRadius={"2xl"}
-            border="none"
-            color={"black"}
-          >
-            Saved Database
-          </Button>
-
-          <Button
-            w="50%"
-            variant="ghost" // Makes background transparent
-            border="none"
-            mt={4}
-            fontSize="4xl" // Makes the "+" larger
-            color="#3083F9" // Sets text color
-            ml="-100px" // Adjust this value to move it further left
-            
-          >
-            +
-          </Button>
-        </HStack> */}
         <HStack w="full" spacing={4} flexWrap="nowrap" justify="start">
           <Button
             maxW="250px" // Prevents button from being too large
@@ -208,7 +167,7 @@ export default function UploadFiles() {
             color="black"
             // ml={["0", "-20px", "-100px"]}
           >
-            Saved Database
+            Select Database
           </Button>
 
           <Button
@@ -229,12 +188,28 @@ export default function UploadFiles() {
             {errorMessage}
           </Text>
         )}
+
+        <Input
+          color="black" // Make text readable on a gray background
+          w="75%"
+          placeholder="Enter Database Name"
+          value={databaseName}
+          onChange={handleDatabaseNameChange}
+          ml={"3"}
+          borderRadius="2xl"
+          border="1px solid"
+          borderColor="gray.300"
+          alignSelf="flex-start"
+          bg="gray.100" // <-- Change background to match "Select Databases"
+          _placeholder={{ color: "gray.500" }} // Match placeholder color
+        />
       </form>
       <Box
         {...getRootProps()}
         p={4}
         w="full"
-        mt={-5}
+        h={["100px", "200px", "300px"]} // Responsive height (small, medium, large screens)
+        mt={-65}
         border="none"
         borderColor="blue.400"
         borderRadius="md"
@@ -367,9 +342,6 @@ export default function UploadFiles() {
           ))}
         </Box>
       )}
-      {/* // this is the image that once you click on it will go to the searchFor  */}
-      {/* <Image src={URL.createObjectURL(file)} alt={file.name} boxSize="80px" borderRadius="md" mr={3} cursor="pointer" onClick={() => handleSelectSingleImage(file)} />
-       */}
 
       <Button
         colorScheme="blue"

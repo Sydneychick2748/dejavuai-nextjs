@@ -7,7 +7,7 @@ import { Box, Button, Heading, Text, Image, VStack, HStack, Spacer } from "@chak
 const styles = {
   backgroundBox: {
     width: "100%",
-    minHeight: "85vh",
+    minHeight: "92.7vh",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
