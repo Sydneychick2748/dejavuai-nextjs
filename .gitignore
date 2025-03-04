@@ -27,3 +27,6 @@ uploads/
 backend/sam_vit_h_4b8939.pth
 backend/segmented_output.png
 node_modules/
+.next/
+node_modules/
+backend-venv/
