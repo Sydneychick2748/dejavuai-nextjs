@@ -26,3 +26,4 @@ uploads/
 # Ignore large model files
 backend/sam_vit_h_4b8939.pth
 backend/segmented_output.png
+.env.local
