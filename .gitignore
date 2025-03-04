@@ -1,8 +1,8 @@
-# Ignore node_modules and build files
+# Ignore dependencies and build files
 node_modules/
 .next/
 .out/
-/build
+build/
 
 # Ignore environment and secrets
 .env*
@@ -26,8 +26,3 @@ uploads/
 # Ignore large model files
 backend/sam_vit_h_4b8939.pth
 backend/segmented_output.png
-node_modules/
-.next/
-node_modules/
-backend-venv/
-/.next
