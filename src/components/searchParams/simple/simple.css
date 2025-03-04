@@ -1,0 +1,43 @@
+.sliderDiv {
+    color: black;
+    width: 100%;
+}
+
+.fastThoroughSlider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.fastThoroughBoxes {
+    background-color: #125FEE;
+    color: white;
+    border-radius: 1rem;
+    margin: 5%;
+    /* padding: 1%; */
+    flex-grow: 1;
+    text-align: center
+}
+
+.slider {
+    flex-grow: 4;
+}
+
+.chakra-slider__range {
+    background-color: grey;
+    background: grey;
+}
+
+.chakra-slider__track {
+    background-color: grey;
+    background: grey;
+}
+
+.chakra-slider__thumb {
+    background-color: #4A87FB;
+    height: 3.5rem;
+}
+
+.chakra-checkbox__control {
+    border-color: #4A87FB;
+}

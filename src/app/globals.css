@@ -1,0 +1,73 @@
+/* Ensure full height */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* Pushes the footer down */
+}
+
+
+.headerFooter1-gradient {
+    background: linear-gradient(90deg, #162D5C, #4985FA);
+    /* Customize colors here */
+    color: white;
+    /* Adjust text color */
+    padding: 16px;
+    /* Add padding */
+    text-align: center;
+}
+
+/* Optional: Add box shadow for depth */
+/* .headerFooter1-gradient {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+} */
+
+/* .container {
+    min-height: 100vh;
+    position: relative;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+} */
+
+/* .btn-logIn{
+    color:white;
+    background-color: #4D89FF;
+    font-weight: 600;
+    border-radius: 20px;
+    
+}
+
+.btn-signUp{
+    color:white;
+    background-color: #4D89FF;
+    font-weight: 600;
+    border-radius: 20px;
+    
+}
+.btn-letsGetStarted{
+    color:white;
+    background-color: #4D89FF;
+    font-weight: 600;
+    border-radius: 20px;
+    font-family: "'Poppins', sans-serif";
+}  */
